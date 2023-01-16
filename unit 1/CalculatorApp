@@ -1,0 +1,43 @@
+Hands-on Lab Exercise
+1. As part of this activity, you will build a simple calculator with the help of the Spring framework. The 
+steps that you need to perform are provided as follows:
+Step 1: Create a new Maven project and name this project ‘Calculator’. In the Artifact Coordinates 
+section, provide the GroupID, ArtifactID and Version as per your choice. You can also provide the following 
+values:
+• GroupId: org.ncu
+• ArtifactId: Calculator
+• Version: Leave this as the default value.
+
+Step 2: In the pom.xml file, you need to add the following dependencies:
+• spring-core
+• spring-context
+
+Step 3: Inside the org.ncu package, create an interface named ‘MathService’. Inside this interface, create 
+a method named ‘operate’. This method takes two arguments, int x and int y, and does not return 
+anything. The method should be public.
+
+Step 4: Create classes named ‘AdditionService’, ‘SubtractionService’, ‘MultiplicationService’ and
+‘DivisionService’. These classes should implement the interface MathService. Each of these classes should 
+have the operate () method and depending on the name of the class, should perform the required task.
+
+Step 5: Create a class named ‘Calculator’ in the org.ncu package and this Calculator class depends on the 
+AdditionService, ‘SubtractionService’, ‘MultiplicationService’ and ‘DivisionService’ class, which you 
+created in the previous step.
+
+Step 6: The Calculator class has a method named compute(), which takes three arguments. The first 
+argument is of type String, and it contains the operation that you want to perform. This argument can be 
+addition, subtraction, multiplication or division. The second and the third arguments that the compute() 
+method takes are the integers on which the operation is to be performed. The method does not return 
+anything. And, the method should be public.
+
+Step 7: After creating the method, you need to update the method. The method should call the operate() 
+method depending on the first argument, which has been passed to the method. For e.g., If the argument 
+passed is ‘add’, then it should return the operate() method defined in the AdditionService class and so on. 
+If the argument is not a valid one, then it should throw an exception.
+
+Step 8: Create one more class named ‘App’ in the org.ncu package. Inside this class, create the main 
+method. Use the ApplicationContext to get the bean of the Calculator class. Once you have the bean of 
+the Calculator class, call the compute() method present inside this class. Pass ‘add’ as the first argument, 
+and for the second and the third arguments, pass two integer values. The compute() method, in turn, 
+should call the operate() method defined in the class corresponding to the first argument of the compute() 
+method
