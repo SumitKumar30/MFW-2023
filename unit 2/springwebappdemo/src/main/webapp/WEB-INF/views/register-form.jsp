@@ -28,11 +28,12 @@
 		<br>
 		<label>Enter State:</label>
 		<form:select path="state">
-			<form:option value="Delhi" label="Delhi" />
+<!-- 			<form:option value="Delhi" label="Delhi" />
 			<form:option value="UP" label="Uttar Pradesh" />
 			<form:option value="HR" label="Haryana" />
 			<form:option value="MH" label="Maharashtra" />
-			<form:option value="PB" label="Punjab" />
+			<form:option value="PB" label="Punjab" /> -->
+			<form:options items='${user.stateOptions}' />
 		</form:select>
 		<br>
 		<br>
@@ -43,10 +44,11 @@
 		<br>
 		<br>
 		<label>Other Verification Options: </label>
-		PAN<form:checkbox path="otherOptions" value="PAN" />  
+<!-- 		PAN<form:checkbox path="otherOptions" value="PAN" />  
         Driving License<form:checkbox path="otherOptions"
 			value="Driving License" />  
-        Voter Id<form:checkbox path="otherOptions" value="Voter Id" />
+        Voter Id<form:checkbox path="otherOptions" value="Voter Id" /> -->
+		<form:checkboxes path ='otherOptions' items='${user.otherOptions}' />
 		<br>
 		<br>
 
